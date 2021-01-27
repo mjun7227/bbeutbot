@@ -17,7 +17,7 @@ async def on_message(message):
         t=""
         ctx=message.content
         for i in ctx[1:]:
-            if 44032>chr(i) and chr(i)>55204:
+            if 44032>ord(i) or ord(i)>55204:
                 t=t+i
             else:
                 i=j2hcj(h2j(i))
