@@ -1,7 +1,7 @@
 import discord 
 import asyncio
 from jamo import j2hcj, h2j
-import hangul_utils
+from uni import join_jamos
 import os
 
 client= discord.Client()
@@ -19,7 +19,8 @@ async def on_message(message):
         for i in ctx[1:]:
             i=j2hcj(h2j(i))
             i="ㅃ"+i[1:]
-            t=t+hangul_utils.join_jamos(i)
+            t=t+join_jamos(i)
         await message.channel.send(f"{message.author.name}:{t}")
 
-client.run(os.environ['token'])
+#client.run(os.environ['token'])
+client.run("NzU0Njc0ODIyODU1OTE3NjM5.X14Lsg.MN2WcIJg7Sox_4R0o6uHnXYtLEE")
