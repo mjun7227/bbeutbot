@@ -1,0 +1,25 @@
+import discord 
+import asyncio
+from jamo import j2hcj, h2j
+import hangul_utils
+import os
+
+client= discord.Client()
+
+@client.event
+async def on_ready():
+    print("응")
+
+@client.event
+
+async def on_message(message):
+    if message.content.startswith("ㅃ"):
+        t=""
+        ctx=message.content
+        for i in ctx[1:]:
+            i=j2hcj(h2j(i))
+            i="ㅃ"+i[1:]
+            t=t+hangul_utils.join_jamos(i)
+        await message.channel.send(f"{message.author.name}:{t}")
+
+client.run(os.environ['token'])

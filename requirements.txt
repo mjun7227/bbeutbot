@@ -1,0 +1,4 @@
+discord.py
+asyncio
+hangul_utils
+jamo
