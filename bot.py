@@ -17,9 +17,12 @@ async def on_message(message):
         t=""
         ctx=message.content
         for i in ctx[1:]:
-            i=j2hcj(h2j(i))
-            i="ㅃ"+i[1:]
-            t=t+join_jamos(i)
+            if i == " ":
+                t=t+" "
+            else:
+                i=j2hcj(h2j(i))
+                i="ㅃ"+i[1:]
+                t=t+join_jamos(i)
         await message.channel.send(f"{message.author.name}:{t}")
 
 client.run(os.environ['token'])
