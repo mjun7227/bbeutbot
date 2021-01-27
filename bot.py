@@ -22,5 +22,4 @@ async def on_message(message):
             t=t+join_jamos(i)
         await message.channel.send(f"{message.author.name}:{t}")
 
-#client.run(os.environ['token'])
-client.run("NzU0Njc0ODIyODU1OTE3NjM5.X14Lsg.MN2WcIJg7Sox_4R0o6uHnXYtLEE")
+client.run(os.environ['token'])
