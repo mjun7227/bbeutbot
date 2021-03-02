@@ -24,5 +24,15 @@ async def on_message(message):
                 i="ㅃ"+i[1:]
                 t=t+join_jamos(i)
         await message.channel.send(f"{message.author.name}:{t}")
+    if message.content.startswith("!호에"):
+        a=message.content
+        result="호"
+        for i in a[3:]:
+            s=bin(ord(i))[2:]
+            s=s.replace("1","ㅇ")
+            s=s.replace("0","ㅔ")
+            result+=(s)
+        result=join_jamos(result)
+        await message.channel.send(f"{message.author.name}:{re}")
 
 client.run(os.environ['token'])
