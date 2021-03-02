@@ -33,6 +33,6 @@ async def on_message(message):
             s=s.replace("0","ㅔ")
             result+=(s)
         result=join_jamos(result)
-        await message.channel.send(f"{message.author.name}:{re}")
+        await message.channel.send(f"{message.author.name}:{result}")
 
 client.run(os.environ['token'])
